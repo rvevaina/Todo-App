@@ -1,0 +1,9 @@
+{
+  "name": "boilerplate",
+  "private": true,
+  "dependencies": {
+    "jquery": "*"
+  },
+  "devDependencies": {},
+  "overrides": {}
+}

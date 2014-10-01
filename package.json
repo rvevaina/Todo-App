@@ -1,0 +1,41 @@
+{
+  "name": "To-do-app",
+  "description": "organizational-app",
+  "version": "0.0.1",
+  "homepage": "http://rayhanv.com/",
+  "author": "Ray",
+  "main": "server.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {},
+  "dependencies": {
+    "express"    : "~4.7.2",
+    "mongoose"   : "~3.6.2",
+    "morgan"   : "~1.2.2",
+    "body-parser": "~1.5.2",
+    "method-override": "~2.1.2"
+  },
+  "devDependencies": {
+    "underscore": "*",
+    "jade": "*",
+    "gulp": "*",
+    "gulp-if": "*",
+    "gulp-debug": "*",
+    "gulp-util": "*",
+    "gulp-load-plugins": "*",
+    "gulp-sass": "*",
+    "gulp-uglify": "*",
+    "gulp-imagemin": "*",
+    "gulp-livereload": "*",
+    "gulp-concat": "*",
+    "gulp-jade": "*",
+    "gulp-rename": "*"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.0"
+  },
+  "keywords": [],
+  "readmeFilename": "README.md",
+  "license": "BSD"
+}
