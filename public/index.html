@@ -6,7 +6,7 @@
 <!--if IE 8<html class="no-js lt-ie9">
 -->
 <!--[if gt IE 8]><!-->
-<html class="no-js">
+<html ng-app="todoApp">
   <!--<![endif]-->
   <head>
     <meta charset="utf-8">
@@ -16,12 +16,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
     <link rel="stylesheet" href="assets/styles/main.css" type="text/css">
   </head>
-  <body></body>
-  <div class="wrapper">
-    <h1>App Test</h1>
-    <p> </p>
+  <body ng-controller="mainController">
+    <div class="container"> 
+      <div class="header">
+        <h1>What are your top 3 tasks today? </h1>
+      </div>
+      <div id="todo-list" class="row">
+        <div class="col-sm-4">
+          <div ng-repeat="todo in todos" class="checkbox">
+            <label for="checkbox">{{ todo.text }}
+              <input type="checkbox" ng-click="deleteTodo(todo._id)">
+            </label>
+          </div>
+        </div>
+      </div>
+      <div id="todo-form" class="row">
+        <div class="col-sm-8"> 
+          <form> 
+            <div class="form-group">
+              <input type="text" placeholder="This task is going to be awesome" ng-model="formData.text" class="form-control input-lg text-center">
+            </div>
+            <button type="submit" ng-click="createTodo()" class="btn btn-primary btn-lg">Add   </button>
+          </form>
+        </div>
+      </div>
+    </div>
     <script type="text/javascript" src="assets/scripts/libs.js"></script>
     <script type="text/javascript" src="assets/scripts/main.js"></script>
-    <script type="text/javascript" src="assets/scripts/main.js"></script>
-  </div>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+  </body>
 </html>

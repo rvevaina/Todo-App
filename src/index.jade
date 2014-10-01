@@ -6,7 +6,7 @@ doctype
 //if IE 8
   <html class="no-js lt-ie9">
 //[if gt IE 8]><!
-html.no-js
+html(ng-app="todoApp")
   //<![endif]
   head
 
@@ -21,17 +21,39 @@ html.no-js
     meta(name="viewport", content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui")
 
     link(rel="stylesheet", href="assets/styles/main.css", type="text/css")
+ 
+  //- Set controller and get all todos 
+  body(ng-controller="mainController")
 
-  body
+    .container 
+        //- Header 
+        .header
+            h1 What are your top 3 tasks today? 
+    
+        //- ToDo List
+        #todo-list.row
+            .col-sm-4
+                //- Loop over todos in $scope.todos
+                .checkbox(ng-repeat="todo in todos")
+                    label(for="checkbox") {{ todo.text }}
+                        input(type="checkbox" ng-click="deleteTodo(todo._id)") 
 
-  .wrapper
+        //- ToDo form
+        #todo-form.row
+            .col-sm-8 
+                form 
+                    .form-group
+                        //- Bind this value to formData.text in angular
+                        input(type="text" class="form-control input-lg text-center" placeholder="This task is going to be awesome" ng-model="formData.text")
+                    //- Submit button to create new todos
+                    button(type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()") Add   
 
-    h1 App Test
-
-    p 
+    
 
     script(type="text/javascript", src="assets/scripts/libs.js")
 
     script(type="text/javascript", src="assets/scripts/main.js")
 
-    script(type="text/javascript", src="assets/scripts/main.js")
+    script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js")
+   
+    

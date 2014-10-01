@@ -2,6 +2,7 @@
 
 var todoApp = angular.module('todo', []);
 
+//create functions to get all todos, create a todo and delete a todo
 function mainController($scope, http) {
 	$scope.formData = {};
 

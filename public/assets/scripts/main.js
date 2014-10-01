@@ -1,7 +1,8 @@
 // Create module, controller and define functions to handle todos
 
-var todoApp = angular.module('todo', []);
+var todoApp = angular.module('todoApp', []);
 
+//create functions to get all todos, create a todo and delete a todo
 function mainController($scope, http) {
 	$scope.formData = {};
 
